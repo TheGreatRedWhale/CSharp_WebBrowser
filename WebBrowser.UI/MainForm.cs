@@ -31,5 +31,19 @@ namespace WebBrowser.UI
                 "------------------------------------------------\n" +
                 "Developed for the course CPSC 2710.");
         }
+
+        private void addressTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            // If the enter key is pressed and released, navigate to the given address.
+            if (e.KeyCode == Keys.Enter)
+            {
+                goButton_Click(sender, e);
+            }
+        }
+
+        private void goButton_Click(object sender, EventArgs e)
+        {
+            webBrowser1.Navigate(addressTextBox.Text);
+        }
     }
 }
