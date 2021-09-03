@@ -99,6 +99,7 @@
             this.exitWebBrowserToolStripMenuItem.Name = "exitWebBrowserToolStripMenuItem";
             this.exitWebBrowserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitWebBrowserToolStripMenuItem.Text = "Exit Web Browser";
+            this.exitWebBrowserToolStripMenuItem.Click += new System.EventHandler(this.exitProgram);
             // 
             // fileToolStripSeparator1
             // 

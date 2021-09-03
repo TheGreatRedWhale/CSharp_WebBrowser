@@ -16,5 +16,10 @@ namespace WebBrowser.UI
         {
             InitializeComponent();
         }
+
+        private void exitProgram(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
