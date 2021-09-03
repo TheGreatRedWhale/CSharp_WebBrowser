@@ -17,9 +17,19 @@ namespace WebBrowser.UI
             InitializeComponent();
         }
 
-        private void exitProgram(object sender, EventArgs e)
+        private void exitWebBrowserToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             Application.Exit();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("" +
+                "Developer:\tJared Whaley\n" +
+                "SID:\t\tjjw0008\n" +
+                "------------------------------------------------\n" +
+                "Developed for the course CPSC 2710.");
         }
     }
 }
