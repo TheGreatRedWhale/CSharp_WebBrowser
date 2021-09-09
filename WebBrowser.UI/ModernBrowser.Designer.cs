@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModernBrowser));
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.backButton = new System.Windows.Forms.ToolStripButton();
             this.forwardButton = new System.Windows.Forms.ToolStripButton();
@@ -38,17 +37,9 @@
             this.addressBar = new System.Windows.Forms.ToolStripTextBox();
             this.goButton = new System.Windows.Forms.ToolStripButton();
             this.bookmarkButton = new System.Windows.Forms.ToolStripButton();
+            this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.toolStrip.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(1009, 543);
-            this.webBrowser1.TabIndex = 2;
             // 
             // toolStrip
             // 
@@ -106,6 +97,7 @@
             // 
             this.addressBar.Name = "addressBar";
             this.addressBar.Size = new System.Drawing.Size(800, 27);
+            this.addressBar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.addressBar_KeyUp);
             // 
             // goButton
             // 
@@ -115,6 +107,7 @@
             this.goButton.Name = "goButton";
             this.goButton.Size = new System.Drawing.Size(24, 24);
             this.goButton.Text = "Go";
+            this.goButton.Click += new System.EventHandler(this.goButton_Click);
             // 
             // bookmarkButton
             // 
@@ -125,12 +118,21 @@
             this.bookmarkButton.Size = new System.Drawing.Size(24, 24);
             this.bookmarkButton.Text = "Bookmark";
             // 
+            // webBrowser
+            // 
+            this.webBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser.Location = new System.Drawing.Point(0, 27);
+            this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser.Name = "webBrowser";
+            this.webBrowser.Size = new System.Drawing.Size(1009, 516);
+            this.webBrowser.TabIndex = 4;
+            // 
             // ModernBrowser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.webBrowser);
             this.Controls.Add(this.toolStrip);
-            this.Controls.Add(this.webBrowser1);
             this.Name = "ModernBrowser";
             this.Size = new System.Drawing.Size(1009, 543);
             this.toolStrip.ResumeLayout(false);
@@ -141,14 +143,15 @@
         }
 
         #endregion
-        private System.Windows.Forms.WebBrowser webBrowser1;
-        private System.Windows.Forms.ToolStrip toolStrip;
-        private System.Windows.Forms.ToolStripButton backButton;
-        private System.Windows.Forms.ToolStripButton forwardButton;
-        private System.Windows.Forms.ToolStripButton refreshButton;
-        private System.Windows.Forms.ToolStripButton homeButton;
-        private System.Windows.Forms.ToolStripTextBox addressBar;
-        private System.Windows.Forms.ToolStripButton goButton;
-        private System.Windows.Forms.ToolStripButton bookmarkButton;
+
+        public System.Windows.Forms.ToolStrip toolStrip;
+        public System.Windows.Forms.ToolStripButton backButton;
+        public System.Windows.Forms.ToolStripButton forwardButton;
+        public System.Windows.Forms.ToolStripButton refreshButton;
+        public System.Windows.Forms.ToolStripButton homeButton;
+        public System.Windows.Forms.ToolStripTextBox addressBar;
+        public System.Windows.Forms.ToolStripButton goButton;
+        public System.Windows.Forms.ToolStripButton bookmarkButton;
+        public System.Windows.Forms.WebBrowser webBrowser;
     }
 }
