@@ -42,19 +42,10 @@
             this.manageBookmarksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mainToolStrip = new System.Windows.Forms.ToolStrip();
-            this.backButton = new System.Windows.Forms.ToolStripButton();
-            this.forwardButton = new System.Windows.Forms.ToolStripButton();
-            this.refreshButton = new System.Windows.Forms.ToolStripButton();
-            this.homeButton = new System.Windows.Forms.ToolStripButton();
-            this.addressTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.goButton = new System.Windows.Forms.ToolStripButton();
-            this.bookmarkButton = new System.Windows.Forms.ToolStripButton();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabControl = new System.Windows.Forms.TabControl();
             this.mainMenuStrip.SuspendLayout();
-            this.mainToolStrip.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.tabControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainMenuStrip
@@ -154,109 +145,31 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // mainToolStrip
-            // 
-            this.mainToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.backButton,
-            this.forwardButton,
-            this.refreshButton,
-            this.homeButton,
-            this.addressTextBox,
-            this.goButton,
-            this.bookmarkButton});
-            this.mainToolStrip.Location = new System.Drawing.Point(0, 24);
-            this.mainToolStrip.Name = "mainToolStrip";
-            this.mainToolStrip.Size = new System.Drawing.Size(971, 27);
-            this.mainToolStrip.TabIndex = 1;
-            // 
-            // backButton
-            // 
-            this.backButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            this.backButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(24, 24);
-            this.backButton.Text = "Back";
-            // 
-            // forwardButton
-            // 
-            this.forwardButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.forwardButton.Image = ((System.Drawing.Image)(resources.GetObject("forwardButton.Image")));
-            this.forwardButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.forwardButton.Name = "forwardButton";
-            this.forwardButton.Size = new System.Drawing.Size(24, 24);
-            this.forwardButton.Text = "Forward";
-            // 
-            // refreshButton
-            // 
-            this.refreshButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.refreshButton.Image = ((System.Drawing.Image)(resources.GetObject("refreshButton.Image")));
-            this.refreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(24, 24);
-            this.refreshButton.Text = "Refresh";
-            // 
-            // homeButton
-            // 
-            this.homeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.homeButton.Image = ((System.Drawing.Image)(resources.GetObject("homeButton.Image")));
-            this.homeButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.homeButton.Name = "homeButton";
-            this.homeButton.Size = new System.Drawing.Size(24, 24);
-            this.homeButton.Text = "Home";
-            // 
-            // addressTextBox
-            // 
-            this.addressTextBox.Name = "addressTextBox";
-            this.addressTextBox.Size = new System.Drawing.Size(800, 27);
-            this.addressTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.addressTextBox_KeyUp);
-            // 
-            // goButton
-            // 
-            this.goButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.goButton.Image = ((System.Drawing.Image)(resources.GetObject("goButton.Image")));
-            this.goButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.goButton.Name = "goButton";
-            this.goButton.Size = new System.Drawing.Size(24, 24);
-            this.goButton.Text = "Go";
-            this.goButton.Click += new System.EventHandler(this.goButton_Click);
-            // 
-            // bookmarkButton
-            // 
-            this.bookmarkButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bookmarkButton.Image = ((System.Drawing.Image)(resources.GetObject("bookmarkButton.Image")));
-            this.bookmarkButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bookmarkButton.Name = "bookmarkButton";
-            this.bookmarkButton.Size = new System.Drawing.Size(24, 24);
-            this.bookmarkButton.Text = "Bookmark";
-            // 
             // tabPage1
             // 
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(963, 775);
+            this.tabPage1.Size = new System.Drawing.Size(963, 802);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Tab 1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabControl1
+            // tabControl
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(0, 54);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(971, 801);
-            this.tabControl1.TabIndex = 2;
+            this.tabControl.Controls.Add(this.tabPage1);
+            this.tabControl.Location = new System.Drawing.Point(0, 27);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(971, 828);
+            this.tabControl.TabIndex = 2;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(971, 860);
-            this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.mainToolStrip);
+            this.Controls.Add(this.tabControl);
             this.Controls.Add(this.mainMenuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mainMenuStrip;
@@ -264,9 +177,7 @@
             this.Text = "Web Browser";
             this.mainMenuStrip.ResumeLayout(false);
             this.mainMenuStrip.PerformLayout();
-            this.mainToolStrip.ResumeLayout(false);
-            this.mainToolStrip.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.tabControl.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,15 +198,7 @@
         private System.Windows.Forms.ToolStripMenuItem manageBookmarksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.ToolStrip mainToolStrip;
-        private System.Windows.Forms.ToolStripButton backButton;
-        private System.Windows.Forms.ToolStripButton forwardButton;
-        private System.Windows.Forms.ToolStripButton refreshButton;
-        private System.Windows.Forms.ToolStripButton homeButton;
-        private System.Windows.Forms.ToolStripTextBox addressTextBox;
-        private System.Windows.Forms.ToolStripButton goButton;
-        private System.Windows.Forms.ToolStripButton bookmarkButton;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabControl;
     }
 }
