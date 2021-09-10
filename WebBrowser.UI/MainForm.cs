@@ -37,5 +37,18 @@ namespace WebBrowser.UI
                 "------------------------------------------------\n" +
                 "Developed for the course CPSC 2710.");
         }
+        
+
+        /// <summary>
+        /// Inserts a new tab.
+        /// </summary>
+        private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControl.TabPages.Insert(tabControl.SelectedIndex + 1 ,"New Tab");
+            tabControl.TabPages[tabControl.SelectedIndex + 1].Controls.Add(new ModernBrowser());
+            int browserIndex = tabControl.TabPages[tabControl.SelectedIndex + 1].Controls.Count - 1;
+            tabControl.TabPages[tabControl.SelectedIndex + 1].Controls[browserIndex].Dock = DockStyle.Fill;
+            tabControl.SelectedIndex++;
+        }
     }
 }
