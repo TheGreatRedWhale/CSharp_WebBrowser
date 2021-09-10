@@ -44,7 +44,9 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl = new System.Windows.Forms.TabControl();
+            this.modernBrowser = new WebBrowser.UI.ModernBrowser();
             this.mainMenuStrip.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -147,10 +149,11 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.modernBrowser);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(963, 802);
+            this.tabPage1.Size = new System.Drawing.Size(963, 810);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Tab 1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -158,11 +161,21 @@
             // tabControl
             // 
             this.tabControl.Controls.Add(this.tabPage1);
-            this.tabControl.Location = new System.Drawing.Point(0, 27);
+            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl.Location = new System.Drawing.Point(0, 24);
             this.tabControl.Name = "tabControl";
+            this.tabControl.Padding = new System.Drawing.Point(3, 3);
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(971, 828);
+            this.tabControl.Size = new System.Drawing.Size(971, 836);
             this.tabControl.TabIndex = 2;
+            // 
+            // modernBrowser
+            // 
+            this.modernBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.modernBrowser.Location = new System.Drawing.Point(3, 3);
+            this.modernBrowser.Name = "modernBrowser";
+            this.modernBrowser.Size = new System.Drawing.Size(957, 804);
+            this.modernBrowser.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -175,8 +188,10 @@
             this.MainMenuStrip = this.mainMenuStrip;
             this.Name = "MainForm";
             this.Text = "Web Browser";
+            this.Resize += new System.EventHandler(this.MainForm_Resize);
             this.mainMenuStrip.ResumeLayout(false);
             this.mainMenuStrip.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -200,5 +215,6 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabControl tabControl;
+        private ModernBrowser modernBrowser;
     }
 }

@@ -35,8 +35,8 @@
             this.refreshButton = new System.Windows.Forms.ToolStripButton();
             this.homeButton = new System.Windows.Forms.ToolStripButton();
             this.addressBar = new System.Windows.Forms.ToolStripTextBox();
-            this.goButton = new System.Windows.Forms.ToolStripButton();
             this.bookmarkButton = new System.Windows.Forms.ToolStripButton();
+            this.goButton = new System.Windows.Forms.ToolStripButton();
             this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.toolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -50,11 +50,11 @@
             this.refreshButton,
             this.homeButton,
             this.addressBar,
-            this.goButton,
-            this.bookmarkButton});
+            this.bookmarkButton,
+            this.goButton});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(1009, 27);
+            this.toolStrip.Size = new System.Drawing.Size(773, 27);
             this.toolStrip.TabIndex = 3;
             // 
             // backButton
@@ -96,11 +96,22 @@
             // addressBar
             // 
             this.addressBar.Name = "addressBar";
-            this.addressBar.Size = new System.Drawing.Size(800, 27);
+            this.addressBar.Size = new System.Drawing.Size(600, 27);
             this.addressBar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.addressBar_KeyUp);
+            // 
+            // bookmarkButton
+            // 
+            this.bookmarkButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.bookmarkButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bookmarkButton.Image = ((System.Drawing.Image)(resources.GetObject("bookmarkButton.Image")));
+            this.bookmarkButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bookmarkButton.Name = "bookmarkButton";
+            this.bookmarkButton.Size = new System.Drawing.Size(24, 24);
+            this.bookmarkButton.Text = "Bookmark";
             // 
             // goButton
             // 
+            this.goButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.goButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.goButton.Image = ((System.Drawing.Image)(resources.GetObject("goButton.Image")));
             this.goButton.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -109,22 +120,13 @@
             this.goButton.Text = "Go";
             this.goButton.Click += new System.EventHandler(this.goButton_Click);
             // 
-            // bookmarkButton
-            // 
-            this.bookmarkButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bookmarkButton.Image = ((System.Drawing.Image)(resources.GetObject("bookmarkButton.Image")));
-            this.bookmarkButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bookmarkButton.Name = "bookmarkButton";
-            this.bookmarkButton.Size = new System.Drawing.Size(24, 24);
-            this.bookmarkButton.Text = "Bookmark";
-            // 
             // webBrowser
             // 
             this.webBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.webBrowser.Location = new System.Drawing.Point(0, 27);
             this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser.Name = "webBrowser";
-            this.webBrowser.Size = new System.Drawing.Size(1009, 516);
+            this.webBrowser.Size = new System.Drawing.Size(773, 512);
             this.webBrowser.TabIndex = 4;
             // 
             // ModernBrowser
@@ -134,7 +136,8 @@
             this.Controls.Add(this.webBrowser);
             this.Controls.Add(this.toolStrip);
             this.Name = "ModernBrowser";
-            this.Size = new System.Drawing.Size(1009, 543);
+            this.Size = new System.Drawing.Size(773, 539);
+            this.Resize += new System.EventHandler(this.ModernBrowser_Resize);
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
             this.ResumeLayout(false);

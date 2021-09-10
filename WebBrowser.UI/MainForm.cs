@@ -38,5 +38,10 @@ namespace WebBrowser.UI
                 "------------------------------------------------\n" +
                 "Developed for the course CPSC 2710.");
         }
+
+        private void MainForm_Resize(object sender, EventArgs e)
+        {
+
+        }
     }
 }

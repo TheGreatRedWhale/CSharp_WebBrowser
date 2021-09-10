@@ -37,5 +37,19 @@ namespace WebBrowser.UI
                 goButton_Click(sender, e);
             }
         }
+
+        private void ModernBrowser_Resize(object sender, EventArgs e)
+        {
+            int width = Width;
+            for (int i = 0; i < toolStrip.Items.Count; i++)
+            {
+                if (toolStrip.Items[i].GetType().ToString().Equals("Button"))
+                {
+                    MessageBox.Show(toolStrip.Items[i].GetType().ToString());
+                    width += toolStrip.Items[i].Width + toolStrip.Items[i].Padding.Horizontal;
+                }
+            }
+            addressBar.Width = width;
+        }
     }
 }
