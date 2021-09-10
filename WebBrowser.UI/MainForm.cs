@@ -23,7 +23,6 @@ namespace WebBrowser.UI
         /// </summary>
         private void exitWebBrowserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             Application.Exit();
         }
 
@@ -37,16 +36,6 @@ namespace WebBrowser.UI
                 "SID:\t\tjjw0008\n" +
                 "------------------------------------------------\n" +
                 "Developed for the course CPSC 2710.");
-        }
-
-        private void MainForm_Resize(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            MainForm_Resize(sender, e);
         }
     }
 }

@@ -60,22 +60,26 @@
             // backButton
             // 
             this.backButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.backButton.Enabled = false;
             this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
             this.backButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.backButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 2);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(24, 24);
             this.backButton.Text = "Back";
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // forwardButton
             // 
             this.forwardButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.forwardButton.Enabled = false;
             this.forwardButton.Image = ((System.Drawing.Image)(resources.GetObject("forwardButton.Image")));
             this.forwardButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.forwardButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 2);
             this.forwardButton.Name = "forwardButton";
             this.forwardButton.Size = new System.Drawing.Size(24, 24);
             this.forwardButton.Text = "Forward";
+            this.forwardButton.Click += new System.EventHandler(this.forwardButton_Click);
             // 
             // refreshButton
             // 
@@ -114,7 +118,7 @@
             this.addressBar.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
             this.addressBar.Name = "addressBar";
             this.addressBar.Padding = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.addressBar.Size = new System.Drawing.Size(595, 24);
+            this.addressBar.Size = new System.Drawing.Size(591, 24);
             this.addressBar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.addressBar_KeyUp);
             // 
             // goButton
@@ -136,6 +140,7 @@
             this.webBrowser.Name = "webBrowser";
             this.webBrowser.Size = new System.Drawing.Size(809, 512);
             this.webBrowser.TabIndex = 4;
+            this.webBrowser.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser_Navigated);
             // 
             // ModernBrowser
             // 
@@ -146,7 +151,8 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "ModernBrowser";
             this.Size = new System.Drawing.Size(809, 539);
-            this.Resize += new System.EventHandler(this.ModernBrowser_Resize);
+            this.Load += new System.EventHandler(this.ModernBrowser_Load);
+            this.SizeChanged += new System.EventHandler(this.ModernBrowser_SizeChanged);
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
             this.ResumeLayout(false);
