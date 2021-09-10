@@ -50,5 +50,22 @@ namespace WebBrowser.UI
             tabControl.TabPages[tabControl.SelectedIndex + 1].Controls[browserIndex].Dock = DockStyle.Fill;
             tabControl.SelectedIndex++;
         }
+
+        private void closeCurrentTabToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tabControl.TabPages.Count <= 1)
+            {
+                exitWebBrowserToolStripMenuItem_Click(sender, e);
+            }
+            else
+            {
+                int removalIndex = tabControl.SelectedIndex;
+                if (tabControl.SelectedIndex > 0)
+                {
+                    tabControl.SelectedIndex--;
+                }
+                tabControl.TabPages.RemoveAt(removalIndex);
+            }
+        }
     }
 }
