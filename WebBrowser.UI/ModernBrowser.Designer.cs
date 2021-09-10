@@ -34,8 +34,8 @@
             this.forwardButton = new System.Windows.Forms.ToolStripButton();
             this.refreshButton = new System.Windows.Forms.ToolStripButton();
             this.homeButton = new System.Windows.Forms.ToolStripButton();
-            this.addressBar = new System.Windows.Forms.ToolStripTextBox();
             this.bookmarkButton = new System.Windows.Forms.ToolStripButton();
+            this.addressBar = new System.Windows.Forms.ToolStripTextBox();
             this.goButton = new System.Windows.Forms.ToolStripButton();
             this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.toolStrip.SuspendLayout();
@@ -49,12 +49,12 @@
             this.forwardButton,
             this.refreshButton,
             this.homeButton,
-            this.addressBar,
             this.bookmarkButton,
+            this.addressBar,
             this.goButton});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(773, 27);
+            this.toolStrip.Size = new System.Drawing.Size(809, 27);
             this.toolStrip.TabIndex = 3;
             // 
             // backButton
@@ -62,6 +62,7 @@
             this.backButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
             this.backButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.backButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 2);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(24, 24);
             this.backButton.Text = "Back";
@@ -71,6 +72,7 @@
             this.forwardButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.forwardButton.Image = ((System.Drawing.Image)(resources.GetObject("forwardButton.Image")));
             this.forwardButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.forwardButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 2);
             this.forwardButton.Name = "forwardButton";
             this.forwardButton.Size = new System.Drawing.Size(24, 24);
             this.forwardButton.Text = "Forward";
@@ -80,24 +82,21 @@
             this.refreshButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.refreshButton.Image = ((System.Drawing.Image)(resources.GetObject("refreshButton.Image")));
             this.refreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.refreshButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 2);
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(24, 24);
             this.refreshButton.Text = "Refresh";
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
             // homeButton
             // 
             this.homeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.homeButton.Image = ((System.Drawing.Image)(resources.GetObject("homeButton.Image")));
             this.homeButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.homeButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 2);
             this.homeButton.Name = "homeButton";
             this.homeButton.Size = new System.Drawing.Size(24, 24);
             this.homeButton.Text = "Home";
-            // 
-            // addressBar
-            // 
-            this.addressBar.Name = "addressBar";
-            this.addressBar.Size = new System.Drawing.Size(600, 27);
-            this.addressBar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.addressBar_KeyUp);
             // 
             // bookmarkButton
             // 
@@ -105,16 +104,25 @@
             this.bookmarkButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bookmarkButton.Image = ((System.Drawing.Image)(resources.GetObject("bookmarkButton.Image")));
             this.bookmarkButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bookmarkButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 2);
             this.bookmarkButton.Name = "bookmarkButton";
             this.bookmarkButton.Size = new System.Drawing.Size(24, 24);
             this.bookmarkButton.Text = "Bookmark";
             // 
+            // addressBar
+            // 
+            this.addressBar.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
+            this.addressBar.Name = "addressBar";
+            this.addressBar.Padding = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.addressBar.Size = new System.Drawing.Size(595, 24);
+            this.addressBar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.addressBar_KeyUp);
+            // 
             // goButton
             // 
-            this.goButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.goButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.goButton.Image = ((System.Drawing.Image)(resources.GetObject("goButton.Image")));
             this.goButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.goButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 2);
             this.goButton.Name = "goButton";
             this.goButton.Size = new System.Drawing.Size(24, 24);
             this.goButton.Text = "Go";
@@ -126,7 +134,7 @@
             this.webBrowser.Location = new System.Drawing.Point(0, 27);
             this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser.Name = "webBrowser";
-            this.webBrowser.Size = new System.Drawing.Size(773, 512);
+            this.webBrowser.Size = new System.Drawing.Size(809, 512);
             this.webBrowser.TabIndex = 4;
             // 
             // ModernBrowser
@@ -135,8 +143,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.webBrowser);
             this.Controls.Add(this.toolStrip);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "ModernBrowser";
-            this.Size = new System.Drawing.Size(773, 539);
+            this.Size = new System.Drawing.Size(809, 539);
             this.Resize += new System.EventHandler(this.ModernBrowser_Resize);
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();

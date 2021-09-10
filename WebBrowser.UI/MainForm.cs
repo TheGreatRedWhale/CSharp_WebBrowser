@@ -41,7 +41,12 @@ namespace WebBrowser.UI
 
         private void MainForm_Resize(object sender, EventArgs e)
         {
+            
+        }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            MainForm_Resize(sender, e);
         }
     }
 }

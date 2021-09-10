@@ -38,18 +38,27 @@ namespace WebBrowser.UI
             }
         }
 
-        private void ModernBrowser_Resize(object sender, EventArgs e)
+        private void resizeAddressBar()
         {
             int width = Width;
             for (int i = 0; i < toolStrip.Items.Count; i++)
             {
                 if (toolStrip.Items[i].GetType().ToString().Equals("Button"))
                 {
-                    MessageBox.Show(toolStrip.Items[i].GetType().ToString());
                     width += toolStrip.Items[i].Width + toolStrip.Items[i].Padding.Horizontal;
                 }
             }
             addressBar.Width = width;
+        }
+
+        private void ModernBrowser_Resize(object sender, EventArgs e)
+        {
+            resizeAddressBar();
+        }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            webBrowser.Refresh();
         }
     }
 }
