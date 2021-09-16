@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WebBrowser.Logic;
 
 namespace WebBrowser.UI
 {
@@ -15,6 +16,16 @@ namespace WebBrowser.UI
         public HistoryManagerForm()
         {
             InitializeComponent();
+        }
+
+        private void HistoryManagerForm_Load(object sender, EventArgs e)
+        {
+            historyListBox.Items.Clear();
+            var history = HistoryManager.GetItems();
+            foreach (var item in history)
+            {
+                historyListBox.Items.Add(item);
+            }
         }
     }
 }

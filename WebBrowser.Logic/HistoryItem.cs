@@ -12,5 +12,11 @@ namespace WebBrowser.Logic
         public string URL { get; set; }
         public string Title { get; set; }
         public DateTime Date { get; set; }
+
+        public override string ToString()
+        {
+            var dateString = Date.ToShortDateString() + " at " + Date.ToShortTimeString();
+            return (String.Format("[{0}] {1} ({2})", dateString, Title, URL));
+        }
     }
 }
