@@ -112,13 +112,14 @@
             this.bookmarkButton.Name = "bookmarkButton";
             this.bookmarkButton.Size = new System.Drawing.Size(24, 24);
             this.bookmarkButton.Text = "Bookmark";
+            this.bookmarkButton.Click += new System.EventHandler(this.bookmarkButton_Click);
             // 
             // addressBar
             // 
             this.addressBar.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
             this.addressBar.Name = "addressBar";
             this.addressBar.Padding = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.addressBar.Size = new System.Drawing.Size(591, 24);
+            this.addressBar.Size = new System.Drawing.Size(589, 24);
             this.addressBar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.addressBar_KeyUp);
             // 
             // goButton

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WebBrowser.Logic;
 
 namespace WebBrowser.UI
 {
@@ -97,6 +98,26 @@ namespace WebBrowser.UI
         {
             backButton.Enabled = webBrowser.CanGoBack;
             forwardButton.Enabled = webBrowser.CanGoForward;
+        }
+
+        private void bookmarkButton_Click(object sender, EventArgs e)
+        {
+            var bookmarks = BookmarksManager.GetItems();
+            var bookmarkExists = false;
+            foreach (var bookmark in bookmarks)
+            {
+                if (bookmark.URL == webBrowser.Url.ToString())
+                {
+                    bookmarkExists = true;
+                }
+            }
+            if (!bookmarkExists)
+            {
+                var bookmark = new BookmarkItem();
+                bookmark.Title = webBrowser.DocumentTitle;
+                bookmark.URL = webBrowser.Url.ToString();
+                BookmarksManager.AddItem(bookmark);
+            }
         }
     }
 }
