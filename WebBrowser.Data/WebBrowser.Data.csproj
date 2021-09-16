@@ -100,10 +100,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="WebBrowserDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="WebBrowserDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>WebBrowserDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>

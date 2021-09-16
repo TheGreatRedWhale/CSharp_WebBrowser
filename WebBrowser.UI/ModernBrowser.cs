@@ -23,7 +23,14 @@ namespace WebBrowser.UI
         /// </summary>
         private void goButton_Click(object sender, EventArgs e)
         {
-            webBrowser.Navigate(addressBar.Text);
+            try
+            {
+                webBrowser.Navigate(addressBar.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.StackTrace, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>
@@ -96,13 +103,28 @@ namespace WebBrowser.UI
         /// </summary>
         private void webBrowser_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
+            // Adjust back and forward button status.
             backButton.Enabled = webBrowser.CanGoBack;
             forwardButton.Enabled = webBrowser.CanGoForward;
+
+            // Change addressBar text.
+            addressBar.Text = webBrowser.Url.ToString();
 
             // Add new webpage to history.
             var historyItem = new HistoryItem();
             historyItem.Date = DateTime.Now;
-            historyItem.Title = webBrowser.DocumentTitle;
+            if (webBrowser.DocumentTitle.Length > 50)
+            {
+                historyItem.Title = (webBrowser.DocumentTitle.Substring(0,47) + "...");
+            }
+            else if (webBrowser.DocumentTitle.Equals(""))
+            {
+                historyItem.Title = "-NO TITLE-";
+            }
+            else
+            {
+                historyItem.Title = webBrowser.DocumentTitle;
+            }
             historyItem.URL = webBrowser.Url.ToString();
             HistoryManager.AddItem(historyItem);
         }

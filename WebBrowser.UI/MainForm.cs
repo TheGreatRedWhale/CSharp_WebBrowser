@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WebBrowser.Logic;
 
 namespace WebBrowser.UI
 {
@@ -66,6 +67,28 @@ namespace WebBrowser.UI
                 }
                 tabControl.TabPages.RemoveAt(removalIndex);
             }
+        }
+
+        private void manageHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var historyManagerForm = new HistoryManagerForm();
+            var history = HistoryManager.GetItems();
+            foreach (var item in history)
+            {
+                historyManagerForm.historyListBox.Items.Add(item);
+            }
+            historyManagerForm.ShowDialog();
+        }
+
+        private void manageBookmarksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var bookmarksManagerForm = new BookmarksManagerForm();
+            var bookmarks = BookmarksManager.GetItems();
+            foreach (var item in bookmarks)
+            {
+                bookmarksManagerForm.bookmarksListBox.Items.Add(item);
+            }
+            bookmarksManagerForm.ShowDialog();
         }
     }
 }

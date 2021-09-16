@@ -43,8 +43,8 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabControl = new System.Windows.Forms.TabControl();
             this.modernBrowser = new WebBrowser.UI.ModernBrowser();
+            this.tabControl = new System.Windows.Forms.TabControl();
             this.mainMenuStrip.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -127,14 +127,16 @@
             // manageHistoryToolStripMenuItem
             // 
             this.manageHistoryToolStripMenuItem.Name = "manageHistoryToolStripMenuItem";
-            this.manageHistoryToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.manageHistoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.manageHistoryToolStripMenuItem.Text = "Manage History";
+            this.manageHistoryToolStripMenuItem.Click += new System.EventHandler(this.manageHistoryToolStripMenuItem_Click);
             // 
             // manageBookmarksToolStripMenuItem
             // 
             this.manageBookmarksToolStripMenuItem.Name = "manageBookmarksToolStripMenuItem";
-            this.manageBookmarksToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.manageBookmarksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.manageBookmarksToolStripMenuItem.Text = "Manage Bookmarks";
+            this.manageBookmarksToolStripMenuItem.Click += new System.EventHandler(this.manageBookmarksToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -162,6 +164,15 @@
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // modernBrowser
+            // 
+            this.modernBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.modernBrowser.Location = new System.Drawing.Point(0, 0);
+            this.modernBrowser.Margin = new System.Windows.Forms.Padding(0);
+            this.modernBrowser.Name = "modernBrowser";
+            this.modernBrowser.Size = new System.Drawing.Size(963, 810);
+            this.modernBrowser.TabIndex = 0;
+            // 
             // tabControl
             // 
             this.tabControl.Controls.Add(this.tabPage1);
@@ -173,15 +184,6 @@
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(971, 836);
             this.tabControl.TabIndex = 2;
-            // 
-            // modernBrowser
-            // 
-            this.modernBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.modernBrowser.Location = new System.Drawing.Point(0, 0);
-            this.modernBrowser.Margin = new System.Windows.Forms.Padding(0);
-            this.modernBrowser.Name = "modernBrowser";
-            this.modernBrowser.Size = new System.Drawing.Size(963, 810);
-            this.modernBrowser.TabIndex = 0;
             // 
             // MainForm
             // 

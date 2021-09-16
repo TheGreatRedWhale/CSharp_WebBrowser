@@ -55,6 +55,6 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox historyListBox;
+        public System.Windows.Forms.ListBox historyListBox;
     }
 }
