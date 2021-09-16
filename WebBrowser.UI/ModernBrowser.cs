@@ -98,12 +98,25 @@ namespace WebBrowser.UI
         {
             backButton.Enabled = webBrowser.CanGoBack;
             forwardButton.Enabled = webBrowser.CanGoForward;
+
+            // Add new webpage to history.
+            var historyItem = new HistoryItem();
+            historyItem.Date = DateTime.Now;
+            historyItem.Title = webBrowser.DocumentTitle;
+            historyItem.URL = webBrowser.Url.ToString();
+            HistoryManager.AddItem(historyItem);
         }
 
+        /// <summary>
+        /// Checks to see if a bookmark for the specified page already exists, and adds one if none exists.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bookmarkButton_Click(object sender, EventArgs e)
         {
             var bookmarks = BookmarksManager.GetItems();
             var bookmarkExists = false;
+            // Check to see if a bookmark for the specified page already exists.
             foreach (var bookmark in bookmarks)
             {
                 if (bookmark.URL == webBrowser.Url.ToString())
@@ -111,6 +124,7 @@ namespace WebBrowser.UI
                     bookmarkExists = true;
                 }
             }
+            // Add a bookmark if none exists.
             if (!bookmarkExists)
             {
                 var bookmark = new BookmarkItem();
