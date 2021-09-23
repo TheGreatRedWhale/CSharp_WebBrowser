@@ -40,9 +40,21 @@ namespace WebBrowser.Data.Properties {
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\WebBrowserDB." +
             "mdf;Integrated Security=True")]
-        public string OldConnection {
+        public string GeneratedConnection {
             get {
-                return ((string)(this["OldConnection"]));
+                return ((string)(this["GeneratedConnection"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\jared\\OneDrive\\Docum" +
+            "ents\\School\\Source\\CPSC 2710\\WebBrowser\\WebBrowser.Data\\bin\\Debug\\WebBrowserDB.m" +
+            "df;Integrated Security=True")]
+        public string DebugConnection {
+            get {
+                return ((string)(this["DebugConnection"]));
             }
         }
     }

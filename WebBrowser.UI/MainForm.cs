@@ -90,5 +90,10 @@ namespace WebBrowser.UI
             }
             bookmarksManagerForm.ShowDialog();
         }
+
+        private void clearHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HistoryManager.ClearHistory();
+        }
     }
 }

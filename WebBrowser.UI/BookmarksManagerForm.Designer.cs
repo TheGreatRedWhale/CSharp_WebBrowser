@@ -47,6 +47,7 @@
             this.bookmarksListBox.Name = "bookmarksListBox";
             this.bookmarksListBox.Size = new System.Drawing.Size(463, 516);
             this.bookmarksListBox.TabIndex = 0;
+            this.bookmarksListBox.SelectedIndexChanged += new System.EventHandler(this.bookmarksListBox_SelectedIndexChanged);
             // 
             // topToolStrip
             // 
@@ -90,6 +91,7 @@
             // deleteButton
             // 
             this.deleteButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.deleteButton.Enabled = false;
             this.deleteButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteButton.Image")));
             this.deleteButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.deleteButton.Name = "deleteButton";

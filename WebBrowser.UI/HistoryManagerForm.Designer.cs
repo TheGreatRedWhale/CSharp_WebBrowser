@@ -43,11 +43,13 @@
             // historyListBox
             // 
             this.historyListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.historyListBox.Enabled = false;
             this.historyListBox.FormattingEnabled = true;
             this.historyListBox.Location = new System.Drawing.Point(0, 25);
             this.historyListBox.Name = "historyListBox";
             this.historyListBox.Size = new System.Drawing.Size(479, 425);
             this.historyListBox.TabIndex = 0;
+            this.historyListBox.SelectedIndexChanged += new System.EventHandler(this.historyListBox_SelectedIndexChanged);
             // 
             // topToolStrip
             // 

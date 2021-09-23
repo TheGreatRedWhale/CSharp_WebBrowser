@@ -78,5 +78,17 @@ namespace WebBrowser.UI
             HistoryManager.ClearHistory();
             HistoryManagerForm_Load(sender, e);
         }
+
+        private void historyListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (historyListBox.SelectedIndex == -1)
+            {
+                deleteButton.Enabled = false;
+            }
+            else
+            {
+                deleteButton.Enabled = true;
+            }
+        }
     }
 }
