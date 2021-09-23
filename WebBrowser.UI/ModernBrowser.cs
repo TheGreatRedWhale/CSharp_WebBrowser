@@ -17,7 +17,30 @@ namespace WebBrowser.UI
         {
             InitializeComponent();
             webBrowser.ScriptErrorsSuppressed = true;
+            cursorURLLabel.Text = "";
         }
+
+        // CUSTOM METHODS -----------------------------------------------------
+
+        /// <summary>
+        /// Resizes the address bar to fill the empty space between icons.
+        /// Does not currently work.
+        /// </summary>
+        private void resizeAddressBar()
+        {
+            int width = toolStrip.Width;
+            for (int i = 0; i < toolStrip.Items.Count; i++)
+            {
+                if (toolStrip.Items[i].GetType().ToString().Equals("Button"))
+                {
+                    width -= (toolStrip.Items[i].Width + toolStrip.Items[i].Padding.Horizontal);
+                }
+            }
+            // MessageBox.Show("Address Bar Width = " + width + ".");
+            addressBar.Width = width;
+        }
+
+        // GENERATED METHODS --------------------------------------------------
 
         /// <summary>
         /// Navigates to the url contained within the address bar.
@@ -45,23 +68,6 @@ namespace WebBrowser.UI
             {
                 goButton_Click(sender, e);
             }
-        }
-
-        /// <summary>
-        /// Resizes the address bar to fill the empty space between icons.
-        /// Does not currently work.
-        /// </summary>
-        private void resizeAddressBar()
-        {
-            int width = Width;
-            for (int i = 0; i < toolStrip.Items.Count; i++)
-            {
-                if (toolStrip.Items[i].GetType().ToString().Equals("Button"))
-                {
-                    width += toolStrip.Items[i].Width + toolStrip.Items[i].Padding.Horizontal;
-                }
-            }
-            addressBar.Width = width;
         }
 
         /// <summary>
@@ -154,6 +160,36 @@ namespace WebBrowser.UI
                 bookmark.Title = webBrowser.DocumentTitle;
                 bookmark.URL = webBrowser.Url.ToString();
                 BookmarksManager.AddItem(bookmark);
+            }
+        }
+
+        private void toolStrip_SizeChanged(object sender, EventArgs e)
+        {
+            resizeAddressBar();
+        }
+
+        private void webBrowser_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
+        {
+            try
+            {
+                navigationStatusBar.Value = (int)(navigationStatusBar.Maximum * (e.CurrentProgress / e.MaximumProgress));
+            }
+            catch (Exception)
+            {
+                navigationStatusBar.Value = 0;
+            }
+
+            if (navigationStatusBar.Value == 0)
+            {
+                // navigationStatusBar.Visible = false;
+                // navigationStatusLabel.Visible = false;
+                navigationStatusLabel.Text = "Done!";
+            }
+            else
+            {
+                // navigationStatusBar.Visible = true;
+                // navigationStatusLabel.Visible = true;
+                navigationStatusLabel.Text = "Loading...";
             }
         }
     }

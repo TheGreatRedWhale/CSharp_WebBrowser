@@ -61,6 +61,7 @@
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(809, 27);
             this.toolStrip.TabIndex = 3;
+            this.toolStrip.SizeChanged += new System.EventHandler(this.toolStrip_SizeChanged);
             // 
             // backButton
             // 
@@ -124,7 +125,7 @@
             this.addressBar.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
             this.addressBar.Name = "addressBar";
             this.addressBar.Padding = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.addressBar.Size = new System.Drawing.Size(587, 24);
+            this.addressBar.Size = new System.Drawing.Size(585, 24);
             this.addressBar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.addressBar_KeyUp);
             // 
             // goButton
@@ -147,6 +148,7 @@
             this.webBrowser.Size = new System.Drawing.Size(809, 512);
             this.webBrowser.TabIndex = 4;
             this.webBrowser.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser_Navigated);
+            this.webBrowser.ProgressChanged += new System.Windows.Forms.WebBrowserProgressChangedEventHandler(this.webBrowser_ProgressChanged);
             // 
             // statusStrip
             // 
@@ -161,14 +163,15 @@
             // 
             // navigationStatusBar
             // 
+            this.navigationStatusBar.MarqueeAnimationSpeed = 1000;
             this.navigationStatusBar.Name = "navigationStatusBar";
             this.navigationStatusBar.Size = new System.Drawing.Size(100, 16);
             // 
             // navigationStatusLabel
             // 
             this.navigationStatusLabel.Name = "navigationStatusLabel";
-            this.navigationStatusLabel.Size = new System.Drawing.Size(100, 17);
-            this.navigationStatusLabel.Text = "Navigation Status";
+            this.navigationStatusLabel.Size = new System.Drawing.Size(38, 17);
+            this.navigationStatusLabel.Text = "Done!";
             // 
             // cursorURLLabel
             // 
@@ -187,8 +190,6 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "ModernBrowser";
             this.Size = new System.Drawing.Size(809, 539);
-            this.Load += new System.EventHandler(this.ModernBrowser_Load);
-            this.SizeChanged += new System.EventHandler(this.ModernBrowser_SizeChanged);
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);

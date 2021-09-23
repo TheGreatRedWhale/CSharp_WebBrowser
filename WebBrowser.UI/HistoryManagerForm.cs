@@ -27,5 +27,39 @@ namespace WebBrowser.UI
                 historyListBox.Items.Add(item);
             }
         }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            if (searchTextBox.Text.Equals(""))
+            {
+                HistoryManagerForm_Load(sender, e);
+            }
+            else
+            {
+                historyListBox.Items.Clear();
+                var history = HistoryManager.GetItems();
+                foreach (var item in history)
+                {
+                    if (item.ToString().ToUpper().Contains(searchTextBox.Text.ToUpper()))
+                    {
+                        historyListBox.Items.Add(item);
+                    }
+                }
+            }
+        }
+
+        private void searchTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            // If the enter key is pressed and released, navigate to the given address.
+            if (e.KeyCode == Keys.Enter)
+            {
+                searchButton_Click(sender, e);
+            }
+        }
+
+        private void searchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            // searchButton_Click(sender, e);
+        }
     }
 }
