@@ -71,12 +71,14 @@ namespace WebBrowser.UI
             var history = HistoryManager.GetItems();
             HistoryManager.RemoveItem(history[historyListBox.SelectedIndex]);
             HistoryManagerForm_Load(sender, e);
+            deleteButton.Enabled = false;
         }
 
         private void clearHistoryButton_Click(object sender, EventArgs e)
         {
             HistoryManager.ClearHistory();
             HistoryManagerForm_Load(sender, e);
+            deleteButton.Enabled = false;
         }
 
         private void historyListBox_SelectedIndexChanged(object sender, EventArgs e)

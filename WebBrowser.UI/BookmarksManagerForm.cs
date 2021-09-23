@@ -67,6 +67,7 @@ namespace WebBrowser.UI
             var bookmarks = BookmarksManager.GetItems();
             BookmarksManager.RemoveItem(bookmarks[bookmarksListBox.SelectedIndex]);
             BookmarksManagerForm_Load(sender, e);
+            deleteButton.Enabled = false;
         }
 
         private void bookmarksListBox_SelectedIndexChanged(object sender, EventArgs e)
