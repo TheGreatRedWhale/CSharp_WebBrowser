@@ -38,7 +38,12 @@
             this.addressBar = new System.Windows.Forms.ToolStripTextBox();
             this.goButton = new System.Windows.Forms.ToolStripButton();
             this.webBrowser = new System.Windows.Forms.WebBrowser();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.navigationStatusBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.navigationStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.cursorURLLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip.SuspendLayout();
+            this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip
@@ -119,7 +124,7 @@
             this.addressBar.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
             this.addressBar.Name = "addressBar";
             this.addressBar.Padding = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.addressBar.Size = new System.Drawing.Size(589, 24);
+            this.addressBar.Size = new System.Drawing.Size(587, 24);
             this.addressBar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.addressBar_KeyUp);
             // 
             // goButton
@@ -143,10 +148,40 @@
             this.webBrowser.TabIndex = 4;
             this.webBrowser.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser_Navigated);
             // 
+            // statusStrip
+            // 
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.navigationStatusBar,
+            this.navigationStatusLabel,
+            this.cursorURLLabel});
+            this.statusStrip.Location = new System.Drawing.Point(0, 517);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(809, 22);
+            this.statusStrip.TabIndex = 5;
+            // 
+            // navigationStatusBar
+            // 
+            this.navigationStatusBar.Name = "navigationStatusBar";
+            this.navigationStatusBar.Size = new System.Drawing.Size(100, 16);
+            // 
+            // navigationStatusLabel
+            // 
+            this.navigationStatusLabel.Name = "navigationStatusLabel";
+            this.navigationStatusLabel.Size = new System.Drawing.Size(100, 17);
+            this.navigationStatusLabel.Text = "Navigation Status";
+            // 
+            // cursorURLLabel
+            // 
+            this.cursorURLLabel.Name = "cursorURLLabel";
+            this.cursorURLLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cursorURLLabel.Size = new System.Drawing.Size(66, 17);
+            this.cursorURLLabel.Text = "Cursor URL";
+            // 
             // ModernBrowser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.webBrowser);
             this.Controls.Add(this.toolStrip);
             this.Margin = new System.Windows.Forms.Padding(0);
@@ -156,6 +191,8 @@
             this.SizeChanged += new System.EventHandler(this.ModernBrowser_SizeChanged);
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,5 +209,9 @@
         public System.Windows.Forms.ToolStripButton goButton;
         public System.Windows.Forms.ToolStripButton bookmarkButton;
         public System.Windows.Forms.WebBrowser webBrowser;
+        private System.Windows.Forms.StatusStrip statusStrip;
+        private System.Windows.Forms.ToolStripProgressBar navigationStatusBar;
+        private System.Windows.Forms.ToolStripStatusLabel navigationStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel cursorURLLabel;
     }
 }
