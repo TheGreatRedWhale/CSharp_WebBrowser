@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryManagerForm));
             this.historyListBox = new System.Windows.Forms.ListBox();
             this.topToolStrip = new System.Windows.Forms.ToolStrip();
-            this.searchButton = new System.Windows.Forms.ToolStripButton();
             this.searchTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.searchButton = new System.Windows.Forms.ToolStripButton();
             this.bottomToolStrip = new System.Windows.Forms.ToolStrip();
             this.deleteButton = new System.Windows.Forms.ToolStripButton();
             this.clearHistoryButton = new System.Windows.Forms.ToolStripButton();
@@ -43,7 +43,6 @@
             // historyListBox
             // 
             this.historyListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.historyListBox.Enabled = false;
             this.historyListBox.FormattingEnabled = true;
             this.historyListBox.Location = new System.Drawing.Point(0, 25);
             this.historyListBox.Name = "historyListBox";
@@ -62,6 +61,13 @@
             this.topToolStrip.TabIndex = 1;
             this.topToolStrip.Text = "toolStrip1";
             // 
+            // searchTextBox
+            // 
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(400, 25);
+            this.searchTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.searchTextBox_KeyUp);
+            this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
+            // 
             // searchButton
             // 
             this.searchButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -71,13 +77,6 @@
             this.searchButton.Size = new System.Drawing.Size(23, 22);
             this.searchButton.Text = "Search";
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
-            // 
-            // searchTextBox
-            // 
-            this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(400, 25);
-            this.searchTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.searchTextBox_KeyUp);
-            this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
             // 
             // bottomToolStrip
             // 
@@ -94,6 +93,7 @@
             // deleteButton
             // 
             this.deleteButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.deleteButton.Enabled = false;
             this.deleteButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteButton.Image")));
             this.deleteButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.deleteButton.Name = "deleteButton";
