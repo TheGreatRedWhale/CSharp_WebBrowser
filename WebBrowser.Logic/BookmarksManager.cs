@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,11 @@ namespace WebBrowser.Logic
         {
             var adapter = new BookmarksTableAdapter();
             adapter.Insert(item.URL, item.Title);
+        }
+        public static void RemoveItem(BookmarkItem item)
+        {
+            var adapter = new BookmarksTableAdapter();
+            adapter.Delete(item.ID);
         }
         public static List<BookmarkItem> GetItems()
         {

@@ -18,6 +18,10 @@ namespace WebBrowser.UI
             InitializeComponent();
         }
 
+        // CUSTOM METHODS -----------------------------------------------------
+        
+        // GENERATED METHODS --------------------------------------------------
+
         private void HistoryManagerForm_Load(object sender, EventArgs e)
         {
             historyListBox.Items.Clear();
@@ -60,6 +64,19 @@ namespace WebBrowser.UI
         private void searchTextBox_TextChanged(object sender, EventArgs e)
         {
             // searchButton_Click(sender, e);
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            var history = HistoryManager.GetItems();
+            HistoryManager.RemoveItem(history[historyListBox.SelectedIndex]);
+            HistoryManagerForm_Load(sender, e);
+        }
+
+        private void clearHistoryButton_Click(object sender, EventArgs e)
+        {
+            HistoryManager.ClearHistory();
+            HistoryManagerForm_Load(sender, e);
         }
     }
 }
