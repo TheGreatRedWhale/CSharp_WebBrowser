@@ -16,6 +16,7 @@ namespace WebBrowser.UI
         public ModernBrowser()
         {
             InitializeComponent();
+            webBrowser.ScriptErrorsSuppressed = true;
         }
 
         /// <summary>
