@@ -38,14 +38,14 @@
             this.fileToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitWebBrowserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageBookmarksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.modernBrowser = new WebBrowser.UI.ModernBrowser();
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.clearHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuStrip.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -126,19 +126,26 @@
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
-            // manageHistoryToolStripMenuItem
-            // 
-            this.manageHistoryToolStripMenuItem.Name = "manageHistoryToolStripMenuItem";
-            this.manageHistoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.manageHistoryToolStripMenuItem.Text = "Manage History";
-            this.manageHistoryToolStripMenuItem.Click += new System.EventHandler(this.manageHistoryToolStripMenuItem_Click);
-            // 
             // manageBookmarksToolStripMenuItem
             // 
             this.manageBookmarksToolStripMenuItem.Name = "manageBookmarksToolStripMenuItem";
-            this.manageBookmarksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageBookmarksToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.manageBookmarksToolStripMenuItem.Text = "Manage Bookmarks";
             this.manageBookmarksToolStripMenuItem.Click += new System.EventHandler(this.manageBookmarksToolStripMenuItem_Click);
+            // 
+            // manageHistoryToolStripMenuItem
+            // 
+            this.manageHistoryToolStripMenuItem.Name = "manageHistoryToolStripMenuItem";
+            this.manageHistoryToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.manageHistoryToolStripMenuItem.Text = "Manage History";
+            this.manageHistoryToolStripMenuItem.Click += new System.EventHandler(this.manageHistoryToolStripMenuItem_Click);
+            // 
+            // clearHistoryToolStripMenuItem
+            // 
+            this.clearHistoryToolStripMenuItem.Name = "clearHistoryToolStripMenuItem";
+            this.clearHistoryToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.clearHistoryToolStripMenuItem.Text = "Clear History";
+            this.clearHistoryToolStripMenuItem.Click += new System.EventHandler(this.clearHistoryToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -187,13 +194,6 @@
             this.tabControl.Size = new System.Drawing.Size(971, 836);
             this.tabControl.TabIndex = 2;
             // 
-            // clearHistoryToolStripMenuItem
-            // 
-            this.clearHistoryToolStripMenuItem.Name = "clearHistoryToolStripMenuItem";
-            this.clearHistoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.clearHistoryToolStripMenuItem.Text = "Clear History";
-            this.clearHistoryToolStripMenuItem.Click += new System.EventHandler(this.clearHistoryToolStripMenuItem_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,22 +216,22 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip mainMenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newTabToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem closeCurrentTabToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem savePageAsHTMLToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem printPageToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator fileToolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem exitWebBrowserToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem manageHistoryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem manageBookmarksToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabControl tabControl;
-        private ModernBrowser modernBrowser;
-        private System.Windows.Forms.ToolStripMenuItem clearHistoryToolStripMenuItem;
+        public System.Windows.Forms.MenuStrip mainMenuStrip;
+        public System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem newTabToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem closeCurrentTabToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem savePageAsHTMLToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem printPageToolStripMenuItem;
+        public System.Windows.Forms.ToolStripSeparator fileToolStripSeparator1;
+        public System.Windows.Forms.ToolStripMenuItem exitWebBrowserToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem manageHistoryToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem manageBookmarksToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        public System.Windows.Forms.TabPage tabPage1;
+        public System.Windows.Forms.TabControl tabControl;
+        public ModernBrowser modernBrowser;
+        public System.Windows.Forms.ToolStripMenuItem clearHistoryToolStripMenuItem;
     }
 }

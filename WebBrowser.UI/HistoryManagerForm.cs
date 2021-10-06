@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WebBrowser.Logic;
@@ -90,6 +91,34 @@ namespace WebBrowser.UI
             else
             {
                 deleteButton.Enabled = true;
+            }
+        }
+
+        private void historyListBox_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (historyListBox.SelectedIndex != -1)
+            {
+                MainForm mainForm = (MainForm) Application.OpenForms[0];
+                if (mainForm.tabControl.SelectedIndex != -1)
+                {
+                    string historyURL = historyListBox.SelectedItem.ToString();
+                    historyURL = Regex.Match(historyURL, @"(www.+|http.+)([\s]|$)").Value;
+                    try
+                    {
+                        mainForm.tabControl.TabPages.Insert(mainForm.tabControl.SelectedIndex + 1, "New Tab");
+                        TabPage newTab = mainForm.tabControl.TabPages[mainForm.tabControl.SelectedIndex + 1];
+                        ModernBrowser modernBrowser = new ModernBrowser();
+                        newTab.Controls.Add(modernBrowser);
+                        modernBrowser.webBrowser.Navigate(historyURL);
+                        int browserIndex = newTab.Controls.Count - 1;
+                        newTab.Controls[browserIndex].Dock = DockStyle.Fill;
+                        mainForm.tabControl.SelectedIndex++;
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                }
             }
         }
     }

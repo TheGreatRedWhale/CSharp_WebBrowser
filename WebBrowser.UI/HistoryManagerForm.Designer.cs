@@ -49,6 +49,7 @@
             this.historyListBox.Size = new System.Drawing.Size(479, 425);
             this.historyListBox.TabIndex = 0;
             this.historyListBox.SelectedIndexChanged += new System.EventHandler(this.historyListBox_SelectedIndexChanged);
+            this.historyListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.historyListBox_MouseDoubleClick);
             // 
             // topToolStrip
             // 
