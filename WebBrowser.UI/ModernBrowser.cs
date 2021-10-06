@@ -29,21 +29,20 @@ namespace WebBrowser.UI
         /// </summary>
         private void resizeAddressBar()
         {
-            string outputString = "";
+            // string outputString = "";
             int width = toolStrip.Width;
             for (int i = 0; i < toolStrip.Items.Count; i++)
             {
-                outputString += toolStrip.Items[i].GetType().ToString()
-                    + " = " + toolStrip.Items[i].GetType().ToString().Contains("Button")
-                    + Environment.NewLine;
+               // outputString += toolStrip.Items[i].GetType().ToString()
+                    // + " = " + toolStrip.Items[i].GetType().ToString().Contains("Button")
+                    // + Environment.NewLine;
                 if (toolStrip.Items[i].GetType().ToString().Contains("Button"))
                 {
                     width -= (toolStrip.Items[i].Width + toolStrip.Items[i].Padding.Horizontal);
                 }
             }
-            // MessageBox.Show("Address Bar Width = " + width + ".");
             this.addressBar.Width = width;
-            MessageBox.Show(outputString);
+            // MessageBox.Show(outputString);
         }
         
         // GENERATED METHODS --------------------------------------------------
