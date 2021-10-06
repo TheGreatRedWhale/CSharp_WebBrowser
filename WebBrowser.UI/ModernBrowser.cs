@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WebBrowser.Logic;
+using System.Text.RegularExpressions;
 
 namespace WebBrowser.UI
 {
@@ -28,18 +29,23 @@ namespace WebBrowser.UI
         /// </summary>
         private void resizeAddressBar()
         {
+            string outputString = "";
             int width = toolStrip.Width;
             for (int i = 0; i < toolStrip.Items.Count; i++)
             {
-                if (toolStrip.Items[i].GetType().ToString().Equals("Button"))
+                outputString += toolStrip.Items[i].GetType().ToString()
+                    + " = " + toolStrip.Items[i].GetType().ToString().Contains("Button")
+                    + Environment.NewLine;
+                if (toolStrip.Items[i].GetType().ToString().Contains("Button"))
                 {
                     width -= (toolStrip.Items[i].Width + toolStrip.Items[i].Padding.Horizontal);
                 }
             }
             // MessageBox.Show("Address Bar Width = " + width + ".");
-            addressBar.Width = width;
+            this.addressBar.Width = width;
+            MessageBox.Show(outputString);
         }
-
+        
         // GENERATED METHODS --------------------------------------------------
 
         /// <summary>
@@ -113,27 +119,6 @@ namespace WebBrowser.UI
             // Adjust back and forward button status.
             backButton.Enabled = webBrowser.CanGoBack;
             forwardButton.Enabled = webBrowser.CanGoForward;
-
-            // Change addressBar text.
-            addressBar.Text = webBrowser.Url.ToString();
-
-            // Add new webpage to history.
-            var historyItem = new HistoryItem();
-            historyItem.Date = DateTime.Now;
-            if (webBrowser.DocumentTitle.Length > 50)
-            {
-                historyItem.Title = (webBrowser.DocumentTitle.Substring(0,47) + "...");
-            }
-            else if (webBrowser.DocumentTitle.Equals(""))
-            {
-                historyItem.Title = "-NO TITLE-";
-            }
-            else
-            {
-                historyItem.Title = webBrowser.DocumentTitle;
-            }
-            historyItem.URL = webBrowser.Url.ToString();
-            HistoryManager.AddItem(historyItem);
         }
 
         /// <summary>
@@ -191,6 +176,43 @@ namespace WebBrowser.UI
                 // navigationStatusLabel.Visible = true;
                 navigationStatusLabel.Text = "Loading...";
             }
+        }
+
+        private void webBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            // Change addressBar text.
+            var pageTitle = webBrowser.DocumentTitle;
+            var maxTabStringLength = 15;
+            var maxHistoryTitleLength = 100;
+
+            // Add new webpage to history.
+            if (pageTitle.Length > maxTabStringLength)
+            {
+                Parent.Text = (pageTitle.Substring(0, maxTabStringLength - 3) + "...");
+            }
+            else
+            {
+                Parent.Text = pageTitle;
+            }
+            addressBar.Text = webBrowser.Url.ToString();
+
+            // Add new webpage to history.
+            var historyItem = new HistoryItem();
+            historyItem.Date = DateTime.Now;
+            if (pageTitle.Length > maxHistoryTitleLength)
+            {
+                historyItem.Title = (pageTitle.Substring(0, maxHistoryTitleLength-3) + "...");
+            }
+            else if (pageTitle.Equals(""))
+            {
+                historyItem.Title = "-NO TITLE-";
+            }
+            else
+            {
+                historyItem.Title = pageTitle;
+            }
+            historyItem.URL = webBrowser.Url.ToString();
+            HistoryManager.AddItem(historyItem);
         }
     }
 }

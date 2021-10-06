@@ -125,7 +125,7 @@
             this.addressBar.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
             this.addressBar.Name = "addressBar";
             this.addressBar.Padding = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.addressBar.Size = new System.Drawing.Size(585, 24);
+            this.addressBar.Size = new System.Drawing.Size(583, 24);
             this.addressBar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.addressBar_KeyUp);
             // 
             // goButton
@@ -147,6 +147,7 @@
             this.webBrowser.Name = "webBrowser";
             this.webBrowser.Size = new System.Drawing.Size(809, 512);
             this.webBrowser.TabIndex = 4;
+            this.webBrowser.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser_DocumentCompleted);
             this.webBrowser.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser_Navigated);
             this.webBrowser.ProgressChanged += new System.Windows.Forms.WebBrowserProgressChangedEventHandler(this.webBrowser_ProgressChanged);
             // 
