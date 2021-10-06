@@ -44,8 +44,8 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.modernBrowser = new WebBrowser.UI.ModernBrowser();
             this.tabControl = new System.Windows.Forms.TabControl();
+            this.modernBrowser = new WebBrowser.UI.ModernBrowser();
             this.mainMenuStrip.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -170,17 +170,8 @@
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Size = new System.Drawing.Size(963, 810);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "New Tab";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // modernBrowser
-            // 
-            this.modernBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.modernBrowser.Location = new System.Drawing.Point(0, 0);
-            this.modernBrowser.Margin = new System.Windows.Forms.Padding(0);
-            this.modernBrowser.Name = "modernBrowser";
-            this.modernBrowser.Size = new System.Drawing.Size(963, 810);
-            this.modernBrowser.TabIndex = 0;
             // 
             // tabControl
             // 
@@ -193,6 +184,15 @@
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(971, 836);
             this.tabControl.TabIndex = 2;
+            // 
+            // modernBrowser
+            // 
+            this.modernBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.modernBrowser.Location = new System.Drawing.Point(0, 0);
+            this.modernBrowser.Margin = new System.Windows.Forms.Padding(0);
+            this.modernBrowser.Name = "modernBrowser";
+            this.modernBrowser.Size = new System.Drawing.Size(963, 810);
+            this.modernBrowser.TabIndex = 0;
             // 
             // MainForm
             // 
